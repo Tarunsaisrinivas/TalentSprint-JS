@@ -29,3 +29,19 @@ result = 7 || 8;
 console.log(`7 || 8 = ${result} typeof: ${typeof result}`, result);
 
 //
+
+let num =5;
+console.log(num && num>0);
+
+console.log("3 > 4 && 4 > 8",3 > 4 && 4 > 8 );
+//similar to above
+
+console.log("!(4 > 8)",!(4 > 8) )
+console.log("!(4 < 8)",!(4 < 8) );
+console.log("!(-8 > 8)",!(-8 > 8) );
+console.log("!(-8 > 8)",!(-8 > 8) );
+console.log("!(-8 || 8)",!(-8 || 8) );
+
+
+
+

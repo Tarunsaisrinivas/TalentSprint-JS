@@ -8,8 +8,8 @@
 // alert(result);
 
 // Arithmetic operations using two numbers
-let num1 = "25";
-let num2 = "B";
+let num1 = 25;
+let num2 = 30;
 
 console.log(`${num1} + ${num2} = ${num1 + num2}`);
 console.log(`${num1} - ${num2} = ${num1 - num2}`);

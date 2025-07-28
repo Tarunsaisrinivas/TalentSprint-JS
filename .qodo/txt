@@ -1,0 +1,72 @@
+let str = "  Hello, World!  ";
+let str2 = "JavaScript";
+
+// 1. length
+console.log("Length:", str.length);
+
+// 2. charAt()
+console.log("charAt(2):", str.charAt(2));  // returns the character at index 2
+
+// 3. charCodeAt()
+console.log("charCodeAt(2):", str.charCodeAt(2));  // Unicode of character at index 2
+
+// 4. codePointAt()
+console.log("codePointAt(2):", str.codePointAt(2));  // Unicode code point
+
+// 5. concat()
+console.log("concat:", str.trim().concat(" ", str2));
+
+// 6. at()
+console.log("at(-1):", str.at(-1));  // Gets last character
+
+// 7. [ ]
+console.log("str[2]:", str[2]);  // Same as charAt
+
+// 8. slice()
+console.log("slice(2, 7):", str.slice(2, 7));  // Slices from index 2 to 6
+
+// 9. substring()
+console.log("substring(2, 7):", str.substring(2, 7));  // Similar to slice
+
+// 10. substr()
+console.log("substr(2, 5):", str.substr(2, 5));  // From index 2, take 5 chars
+
+// 11. toUpperCase()
+console.log("toUpperCase():", str.toUpperCase());
+
+// 12. toLowerCase()
+console.log("toLowerCase():", str.toLowerCase());
+
+// 13. isWellFormed()
+console.log("isWellFormed():", str.isWellFormed());  // Returns true if string is valid UTF-16
+
+// 14. toWellFormed()
+console.log("toWellFormed():", str.toWellFormed());  // Fixes malformed UTF-16
+
+// 15. trim()
+console.log("trim():", str.trim());
+
+// 16. trimStart()
+console.log("trimStart():", str.trimStart());
+
+// 17. trimEnd()
+console.log("trimEnd():", str.trimEnd());
+
+// 18. padStart()
+console.log("padStart(20, '-'):", str2.padStart(20, '-'));
+
+// 19. padEnd()
+console.log("padEnd(20, '-'):", str2.padEnd(20, '-'));
+
+// 20. repeat()
+console.log("repeat(3):", str2.repeat(3));
+
+// 21. replace()
+console.log("replace('World', 'JS'):", str.replace("World", "JS"));
+
+// 22. replaceAll()
+let multilineStr = "JS is fun. JS is powerful.";
+console.log("replaceAll('JS', 'JavaScript'):", multilineStr.replaceAll("JS", "JavaScript"));
+
+// 23. split()
+console.log("split(','):", str.split(","));

@@ -37,17 +37,7 @@ switch (dayNumber % 7) {
 // else console.log(`${year} is not a leap year`);
 // 8 problem Leap Year switch case
 
-let leapyear = 2020;
-
-// if (leapyear % 400 === 0) {
-//   console.log("leap year");
-// } else if (leapyear % 100 === 0) {
-//   console.log("not a leap year");
-// } else if (leapyear % 4 === 0) {
-//   console.log("leap year");
-// } else {
-//   console.log("not a leap year");
-// }
+let leapyear = 1600;
 switch (true) {
   case leapyear % 400 === 0:
     console.log("leap year");
@@ -65,13 +55,10 @@ switch (true) {
 
 // 9 problem Month Days switch case without function
 
-// let month = 6; // June
-// let year = 2023;
-
-// if (month < 1 || month > 12) {
-//   console.log("Invalid month");
-// } else {
-let monthName = "January";
+// let monthName = process.argv[2] ;
+let monthName = "May";
+monthName =
+  monthName.charAt(0).toUpperCase() + monthName.slice(1).toLowerCase();
 let year = 2024;
 
 switch (monthName) {
@@ -119,28 +106,3 @@ switch (monthName) {
     console.log("Invalid month name");
 }
 
-// function getDaysInMonth(month, year) {
-//   switch (month) {
-//     case 1:
-//     case 3: // March
-//     case 5: // May
-//     case 7: // July
-//     case 8: // August
-//     case 10: // October
-//     case 12: // December
-//       return 31;
-//     case 4: // April
-//     case 6: // June
-//     case 9: // September
-//     case 11: // November
-//       return 30;
-//     case 2: // February
-//       if (isLeapYear(year)) {
-//         return 29;
-//       } else {
-//         return 28;
-//       }
-//     default:
-//       return "Invalid month";
-//   }
-// }

@@ -53,12 +53,15 @@ console.log("endsWith('!'):", str.endsWith("!"));
 console.log("repeat(2):", str.repeat(2)); // repeats the string 2 times
 // 18. padStart()
 console.log("padStart(20, '-'):", str.padStart(20, "-")); // adds '-' to the start of the string
-console.log("padStart(20, '-'):", str.substring(0, 2).padStart(20, "*")); // adds '-' to the start of the string
-// 19. padEnd()
+console.log("padStart(20, '-'):", str.substring(0, 2).padStart(20, "*")); 
+// 19. padEnd()ś
 console.log("padEnd(20, '-'):", str.padEnd(20, "-")); // adds '-' to the end of the string
 console.log("padEnd(20, '-'):", str.substring(0, 2).padEnd(20, "*"));
 // 20. search()
 console.log("search('World'):", str.search("World"));
 
-console.log("Name :", str3.substring(0, 2).padEnd(12, "*") + str3.slice(-2));
+console.log(
+  "Name :",
+  str3.substring(0, 2).padEnd(str3.length-2, "*") + str3.slice(-2)
+);
 console.log("length of str3:", str3.length);

@@ -12,3 +12,9 @@ for (let i = 1; i < numbers.length; i++) {
   if (numbers[i] > largest) largest = numbers[i];
 }
 console.log(`${largest} is the largest number`);
+
+
+let max = a;
+if (b > max) max = b;
+if (c > max) max = c;
+console.log(`${max} is the largest number`);

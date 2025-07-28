@@ -76,7 +76,7 @@ while (k <= 100) {
 }
 //factorial
 console.log("Factorial using while loop");
-let factori̥alWhile = 1;
+let factorialWhile = 1;
 let l = 1;
 while (l <= 10) {
   factorialWhile *= l;
@@ -100,6 +100,7 @@ console.log(
 );
 
 //do while loop
+//sum
 console.log("Using do while loop");
 let sumDoWhile = 0;
 let num = 1;

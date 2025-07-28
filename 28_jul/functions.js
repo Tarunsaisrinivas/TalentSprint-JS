@@ -69,3 +69,12 @@ function tableOfTwo(n) {
   }
 }
 tableOfTwo(10);
+
+function factorial(start,end){
+  let factorial = 1;
+  for (let i = start; i <= end; i++) {
+    factorial *= i;
+  }
+  return factorial;
+}
+console.log(factorial(1,5)); 

@@ -2,19 +2,19 @@
 
 ## 📅 Topics Table
 
-| Date       | Topic       | Link                        |
-| ---------- | ----------- | --------------------------- |
-| 22-07-2025 | Basics      | [Basics](#basics)           |
-| 22-07-2025 | Arthimetics | [Arthimetics](#arthimetics) |
-| 22-07-2025 | Speed       | [Speed](#speed)             |
-| 22-07-2025 | Swap        | [Swap](#swap)               |
-| 22-07-2025 | Temperature | [Temperature](#temperature) |
-| 23-07-2025 | Conditional | [Conditional](#conditional) |
-| 23-07-2025 | Relational  | [relational](#relational)   |
-| 23-07-2025 | Switch Case | [switch case](#switch)      |
-| 24-07-2025 | Strings     | [String](#string)           |
-| 28-07-2025 | Loops       | [Loops](#loops)             |
-| 28-07-2025 | Functions   | [Functions](#functions)     |
+| 📅 Date   |    🧠 Topic |🔗 Link                      | ✅ Status  |
+| ---------- | ----------- | --------------------------- |-------------| 
+| 22-07-2025 | Basics      | [Basics](#basics)           | ✅          |
+| 22-07-2025 | Arthimetics | [Arthimetics](#arthimetics) | ✅          |
+| 22-07-2025 | Speed       | [Speed](#speed)             | ✅          |
+| 22-07-2025 | Swap        | [Swap](#swap)               | ✅          |
+| 22-07-2025 | Temperature | [Temperature](#temperature) | ✅          |
+| 23-07-2025 | Conditional | [Conditional](#conditional) | ✅          |
+| 23-07-2025 | Relational  | [relational](#relational)   | ✅          |
+| 23-07-2025 | Switch Case | [switch case](#switch)      | ✅          |
+| 24-07-2025 | Strings     | [String](#string)           | ✅          |
+| 28-07-2025 | Loops       | [Loops](#loops)             | ✅          |
+| 28-07-2025 | Functions   | [Functions](#functions)     | ✅          |
 
 ---
 
@@ -497,4 +497,277 @@ console.log("search('World'):", str.search("World"));
 console.log("Name :",str3.substring(0, 2).padEnd(str3.length-2, "*") + str3.slice(-2));
 ```
 ---
+### Loops 
 
+ - Class topic
+```js
+let n = 15693;
+while (n > 0) {
+  console.log(n % 10);
+  n = Math.floor((n /= 10));
+}
+```
+ ### For Loop
+  - sum
+```js
+let sum = 0;
+for (let i = 1; i <= 10; i++) {
+  sum += i;
+}
+console.log("Sum =", sum);
+```
+ - sqrt
+```js
+let sqrt = 0;
+for (let i = 0; i <= 100; i++) {
+  sqrt = i * i;
+  console.log("Square of", i, "is", sqrt);
+}
+```
+ - cbrt 
+```js
+let cbrt = 0;
+for (let i = 0; i <= 100; i++) {
+  cbrt = i * i * i;
+  console.log("Cube Root of", i, "is", cbrt);
+}
+```
+
+ - factorial
+```js
+let factorial = 1;
+for (let i = 1; i <= 10; i++) {
+  factorial *= i;
+}
+console.log("Factorial of 10 is", factorial);
+```
+ - divisible by 3 and 5
+```js
+let divisibleCount = 0;
+for (let i = 1; i <= 100; i++) {
+  if (i % 3 === 0 && i % 5 === 0) {
+    console.log(i, "is divisible by 3 and 5");
+    divisibleCount++;
+  }
+}
+console.log("There are",divisibleCount,"numbers divisible by 3 and 5 between 1 and 100"
+);
+```
+ ### While Loop
+ - sum
+```js
+console.log("Using while loop");
+let sumWhile = 0;
+let i = 1;
+while (i <= 10) {
+  sumWhile += i;
+  i++;
+}
+console.log("Sum =", sum);
+```
+ - sqrt
+```js
+console.log("Square roots using while loop");
+let j = 0;
+while (j <= 100) {
+  sqrt = j * j;
+  console.log("using while Square of", j, "is", sqrt);
+  j++;
+}
+```
+ - cbrt
+```js
+console.log("Cube roots using while loop");
+let k = 0;
+while (k <= 100) {
+  sqrt = k * k * k;
+  console.log("using while Square of", k, "is", sqrt);
+  k++;
+}
+```
+ - factorial
+```js
+console.log("Factorial using while loop");
+let factorialWhile = 1;
+let l = 1;
+while (l <= 10) {
+  factorialWhile *= l;
+  l++;
+}
+console.log("Factorial of 10 is", factorialWhile);
+```
+ - divisible by 3 and 5
+```js
+console.log("Divisible by 3 and 5 using while loop");
+let m = 1;
+while (m <= 100) {
+  if (m % 3 === 0 && m % 5 === 0) {
+    console.log(m, "is divisible by 3 and 5");
+    divisibleCount++;
+  }
+  m++;
+}
+console.log("There are",divisibleCount,"numbers divisible by 3 and 5 between 1 and 100");
+```
+ ### do while loop
+ - sum
+```js
+console.log("Using do while loop");
+let sumDoWhile = 0;
+let num = 1;
+do {
+  sumDoWhile += num;
+  num++;
+} while (num <= 10);
+console.log("Sum =", sumDoWhile);
+```
+ - sqrt
+```js
+console.log("Square roots using do while loop");
+let p = 0;
+do {
+  sqrt = p * p;
+  console.log("using do while Square of", p, "is", sqrt);
+  p++;
+} while (p <= 100);
+//cbrt
+console.log("Cube roots using do while loop");
+let q = 0;
+do {
+  sqrt = q * q * q;
+  console.log("using do while Square of", q, "is", sqrt);
+  q++;
+} while (q <= 100);
+```
+ - factorial
+ ```js
+console.log("Factorial using do while loop");
+let r = 1;
+do {
+  factorial *= r;
+  r++;
+} while (r <= 10);
+console.log("Factorial of 10 is", factorial);
+```
+
+ - divisible by 3 and 5
+```js
+console.log("Divisible by 3 and 5 using do while loop");
+let s = 1;
+do {
+  if (s % 3 === 0 && s % 5 === 0) {
+    console.log(s, "is divisible by 3 and 5");
+    divisibleCount++;
+  }
+  s++;
+} while (s <= 100);
+console.log("There are",divisibleCount,"numbers divisible by 3 and 5 between 1 and 100");
+```
+---
+### Functions
+ - Basic Function
+```js
+function greet(name) {
+  console.log("Hello", name);
+}
+greet("Tarun");
+```
+ - Anonymous function
+ ```js
+const divisible = (num) => {
+  if (num % 3 === 0 && num % 5 === 0) {
+    console.log(num, "is FizzBuzz");
+  }
+  if (num % 3 === 0 && num % 5 !== 0) {
+    console.log(num, "is Fizz");
+  }
+  if (num % 3 !== 0 && num % 5 === 0) {
+    console.log(num, "is Buzz");
+  }
+};
+
+divisible(15);
+```
+
+ - sum of first 20 numbers
+```js
+function sumOfNumbers(n) {
+  let sum = 0;
+  for (let i = 1; i <= n; i++) {
+    sum += i;
+  }
+  return sum;
+}
+console.log(sumOfNumbers(20));
+```
+ - sum of even numbers in given range
+ ```js
+function sumOfEvenNumbers(start, end) {
+  let sum = 0;
+  for (let i = start; i <= end; i++) {
+    if (i % 2 === 0) {
+      sum += i;
+    }
+  }
+  return sum;
+}
+console.log(sumOfEvenNumbers(1, 10));
+```
+ - Greatest of four numbers
+ ```js
+function greatestOfThree(a, b, c,d) {
+  return Math.max(a, b, c,d);
+}
+console.log(greatestOfThree(3, 4, 5,6));
+```
+ - find the no of 7 multiple in given range
+ ```js
+function countMultiplesOfSeven(start, end) {
+  let count = 0;
+  for (let i = start; i <= end; i++) {
+    if (i % 7 === 0) {
+      count++;
+    }
+  }
+  return count;
+}
+console.log(countMultiplesOfSeven(1, 100));
+```
+ - 2 table
+```js
+function tableOfTwo(n) {
+  for (let i = 1; i <= n; i++) {
+    console.log(`2 x ${i} = ${2 * i}`);
+  }
+}
+tableOfTwo(10);
+```
+- Factorial
+```js
+function factorial(start,end){
+  let factorial = 1;
+  for (let i = start; i <= end; i++) {
+    factorial *= i;
+  }
+  return factorial;
+}
+console.log(factorial(1,5)); 
+```
+ - FizzBuzz
+```js
+ function fizzBuzz(num) {
+  if (num % 3 === 0 && num % 5 === 0) {
+    console.log("FizzBuzz");
+  } else if (num % 3 === 0) {
+    console.log("Fizz");
+  } else if (num % 5 === 0) {
+    console.log("Buzz");
+  } else {
+    console.log(num);
+  }
+}
+
+for (let i = 1; i <= 100; i++) {
+  fizzBuzz(i);
+}
+```

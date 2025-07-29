@@ -12,11 +12,14 @@ const divisible = (num) => {
   if (num % 3 === 0 && num % 5 === 0) {
     console.log(num, "is FizzBuzz");
   }
-  if (num % 3 === 0 && num % 5 !== 0) {
+  else if (num % 3 === 0 && num % 5 !== 0) {
     console.log(num, "is Fizz");
   }
-  if (num % 3 !== 0 && num % 5 === 0) {
+  else if (num % 3 !== 0 && num % 5 === 0) {
     console.log(num, "is Buzz");
+  }
+  else {
+    console.log(num, "is neither Fizz nor Buzz");
   }
 };
 
@@ -78,3 +81,5 @@ function factorial(start,end){
   return factorial;
 }
 console.log(factorial(1,5)); 
+
+

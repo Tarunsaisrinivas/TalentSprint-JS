@@ -5,18 +5,19 @@
 | 📅 Date   |    🧠 Topic |🔗 Link                      | ✅ Status  |
 | ---------- | ----------- | --------------------------- |-------------| 
 | 22-07-2025 | Basics      | [Basics](#basics)           | ✅          |
-| 22-07-2025 | Arthimetics | [Arthimetics](#arthimetics) | ✅          |
-| 22-07-2025 | Speed       | [Speed](#speed)             | ✅          |
-| 22-07-2025 | Swap        | [Swap](#swap)               | ✅          |
-| 22-07-2025 | Temperature | [Temperature](#temperature) | ✅          |
+|            | Arthimetics | [Arthimetics](#arthimetics) | ✅          |
+|            | Speed       | [Speed](#speed)             | ✅          |
+|            | Swap        | [Swap](#swap)               | ✅          |
+|            | Temperature | [Temperature](#temperature) | ✅          |
 | 23-07-2025 | Conditional | [Conditional](#conditional) | ✅          |
-| 23-07-2025 | Relational  | [relational](#relational)   | ✅          |
-| 23-07-2025 | Switch Case | [switch case](#switch)      | ✅          |
+|            | Relational  | [relational](#relational)   | ✅          |
+|            | Switch Case | [switch case](#switch)      | ✅          |
 | 24-07-2025 | Strings     | [String](#string)           | ✅          |
 | 28-07-2025 | Loops       | [Loops](#loops)             | ✅          |
-| 28-07-2025 | Functions   | [Functions](#functions)     | ✅          |
+|            | Functions   | [Functions](#functions)     | ✅          |
 
 ---
+
 
 ## 📘 Topics & Examples
 

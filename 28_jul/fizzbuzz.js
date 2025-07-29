@@ -2,18 +2,18 @@
 
 function fizzBuzz(num) {
   if (num % 3 === 0 && num % 5 === 0) {
-    console.log("FizzBuzz");
+    return "FizzBuzz";
   } else if (num % 3 === 0) {
-    console.log("Fizz");
+    return "Fizz";
   } else if (num % 5 === 0) {
-    console.log("Buzz");
+    return "Buzz";
   } else {
-    console.log(num);
+    return num;
   }
 }
 
 for (let i = 1; i <= 100; i++) {
-  fizzBuzz(i);
+  console.log(fizzBuzz(i));
 }
 
 // function fizzBuzzInRange(start, end) {

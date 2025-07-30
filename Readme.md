@@ -15,6 +15,8 @@
 | 24-07-2025 | Strings     | [String](#string)           | ✅          |
 | 28-07-2025 | Loops       | [Loops](#loops)             | ✅          |
 |            | Functions   | [Functions](#functions)     | ✅          |
+| 29-07-2025 | Factors     | [Factors](#factors)         | ✅          |
+|            | Prime Number| [Prime Number](#prime)      | ✅          |
 
 ---
 
@@ -756,19 +758,171 @@ console.log(factorial(1,5));
 ```
  - FizzBuzz
 ```js
- function fizzBuzz(num) {
+function fizzBuzz(num) {
   if (num % 3 === 0 && num % 5 === 0) {
-    console.log("FizzBuzz");
+    return "FizzBuzz";
   } else if (num % 3 === 0) {
-    console.log("Fizz");
+    return "Fizz";
   } else if (num % 5 === 0) {
-    console.log("Buzz");
+    return "Buzz";
   } else {
-    console.log(num);
+    return num;
   }
 }
 
 for (let i = 1; i <= 100; i++) {
-  fizzBuzz(i);
+  console.log(fizzBuzz(i));
 }
+
+```
+### Factors
+
+ - count of factor
+```js
+function countFactors(num) {
+  let count = 0;
+  for (let i = 1; i <= num; i++) {
+    if (num % i === 0) {
+      count++;
+    }
+  }
+  return count;
+}
+console.log("Count of factors", countFactors(10));
+```
+ - sum of factors
+```js
+function sumOfFactors(num) {
+  let sum = 0;
+  for (let i = 1; i <= num; i++) {
+    if (num % i === 0) {
+      sum += i;
+    }
+  }
+  return sum;
+}
+console.log("Sum of factors", sumOfFactors(10));
+```
+ - aliqoute sum
+ ```js
+function aliquouteSum(num) {
+  let sum = 0;
+  for (let i = 1; i < num; i++) {
+    if (num % i === 0) {
+      sum += i;
+    }
+  }
+  return sum;
+}
+console.log("Aliqoute sum", aliquouteSum(10));
+console.log("Aliqoute sum", aliquouteSum(24));
+console.log("Aliqoute sum", aliquouteSum(28));
+```
+
+ - perfect number
+ ```js
+function isPerfectNumber(num) {
+  let sum = 0;
+  for (let i = 1; i < num; i++) {
+    if (num % i === 0) {
+      sum += i;
+    }
+  }
+  return sum === num;
+}
+console.log("Is perfect number", isPerfectNumber(6));
+console.log("Is perfect number", isPerfectNumber(28));
+```
+ - abundant number
+ ```js
+function abundantNumber(num){
+    if (aliquouteSum(num) > num) {
+      return true;
+    }
+    return false;
+}
+console.log("Is abundant number", abundantNumber(12));
+```
+ - deficient number
+```js
+function deficientNumber(num){
+    if (aliquouteSum(num) < num) {
+      return true;
+    }
+    return false;
+}
+console.log("Is deficient number", deficientNumber(12));
+```
+ - perfect number in given range
+ ```js
+function perfectNumbersInRange(start, end) {
+  for (let i = start; i <= end; i++) {
+    if (isPerfectNumber(i)) {
+      console.log(i, "is perfect number");
+    }
+  }
+}
+perfectNumbersInRange(1, 100);
+```
+---
+### Prime
+
+ - prime number
+```js
+function isPrimeNumber(num) {
+  for (let i = 2; i < num; i++) {
+    if (num % i === 0) {
+      return false;
+    }
+  }
+  return true;
+}
+console.log("Is prime number", isPrimeNumber(3));
+console.log("Is prime number", isPrimeNumber(28));
+```
+
+ - prime or not in other way
+```js
+function checkPrime(num) {
+  if (num < 2) return false;
+  for (let i = 2; i <= Math.sqrt(num); i++) {
+    if (num % i === 0) return false;
+  }
+  return true;
+}
+console.log ("Is prime number 2 model", checkPrime(3));
+```
+ - need to skip ! need to be in single line code
+ ```js
+function primeNumbersInRange(start, end) {
+  let primes = [];
+  for (let i = start; i <= end; i++) {
+    if (checkPrime(i)) {
+      primes.push(i);
+    }
+  }
+  return primes;
+}
+console.log("Is prime number 2 model", primeNumbersInRange(1, 100));
+```
+ - Palindrome
+ ```js
+function isPalindrome(num) {
+  let str = num.toString();
+  let reversedStr = str.split('').reverse().join('');
+  return str === reversedStr;
+}
+console.log("Is palindrome", isPalindrome(121));
+console.log("Is palindrome", isPalindrome(123));
+```
+ - Next smallest palindrom number
+ ```js
+function nextPalindrome(num) {
+  let nextNum = num + 1;
+  while (!isPalindrome(nextNum)) {
+    nextNum++;
+  }
+  return nextNum;
+}
+console.log("Next smallest palindrom number", nextPalindrome(121));
 ```

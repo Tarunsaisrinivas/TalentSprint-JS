@@ -50,3 +50,13 @@ function nextPalindrome(num) {
   return nextNum;
 }
 console.log("Next smallest palindrom number", nextPalindrome(121));
+//30 th jul
+//palindrome for a string
+function isStringPalindrome(str) {
+  let reversedStr = str.split('').reverse().join('');
+  return str === reversedStr;
+}
+console.log("Is string palindrome", isStringPalindrome("racecar"));
+console.log("Is string palindrome", isStringPalindrome("hello"));
+
+

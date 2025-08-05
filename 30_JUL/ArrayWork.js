@@ -14,6 +14,7 @@ console.log("Greatest number", greatestNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]));
 //Method 2 : Without function
 let array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 console.log("Greatest number", Math.max(...array));
+
 //same code with function
 
 // least number of an array

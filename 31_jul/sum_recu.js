@@ -18,3 +18,20 @@ function sumOfDigits(num) {
 
 console.log("Sum of digits : ", sumOfDigits(1234));
 console.log("Sum of digits : ", sumOfDigits(0));
+
+//digital sum example 123 = 1+2+3 = 6 or 1234 = 1+2+3+4 = 10 then 1+0 = 1
+
+function digitalSum(n) {
+  while (n >= 10) {
+    let sum = 0;
+    while (n > 0) {
+      sum += n % 10;
+      n = Math.floor(n / 10);
+    }
+    n = sum;
+  }
+  return n;
+}
+
+console.log(digitalSum(123));   
+console.log(digitalSum(1234));  

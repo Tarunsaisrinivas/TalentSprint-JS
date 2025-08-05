@@ -38,9 +38,7 @@ console.log("Sum of squares of digits", sumOfSquaresOfDigits(1234));
 //4 Amstrong number
 function ArmstrongNumber(num) {
   let sum = 0;
-
   const digitsCount = countDigits(num);
-
   while (num > 0) {
     let digit = num % 10;
     sum += Math.pow(digit, digitsCount);

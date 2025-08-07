@@ -25,3 +25,4 @@ printPrimes(50);
 //     for (let i = str1; i < str2; i++){
 //        console.log(i) ;
 //     }
+

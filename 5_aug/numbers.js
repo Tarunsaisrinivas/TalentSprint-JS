@@ -127,11 +127,27 @@
 // rectangleDiagnolPattern(5, 4);
 
 //need only diagnol and sides
-function rectangleCrossPattern(rows, columns) {
+// function rectangleCrossPattern(rows, columns) {
+//   for (let i = 1; i <= rows; i++) {
+//     let str = "";
+//     for (let j = 1; j <= columns; j++) {
+//       if (i === 1 || i === rows || j === 1 || j === columns || i === j || j === rows - i + 1) {
+//         str += "* ";
+//       } else {
+//         str += "  ";
+//       }
+//     }
+//     console.log(str);
+//   }
+// }
+// rectangleCrossPattern(7, 7);
+// fix the above issue
+
+function rectangleCrossPattern1(rows, columns) {
   for (let i = 1; i <= rows; i++) {
     let str = "";
     for (let j = 1; j <= columns; j++) {
-      if (i === 1 || i === rows || j === 1 || j === columns || i === j || j === rows - i + 1) {
+      if (j === 1 || j === columns || i === j || j === rows - i + 1) {
         str += "* ";
       } else {
         str += "  ";
@@ -140,5 +156,39 @@ function rectangleCrossPattern(rows, columns) {
     console.log(str);
   }
 }
-rectangleCrossPattern(7, 7);
 
+rectangleCrossPattern1(7, 7);
+
+console.log("---left angle triangle-----");
+//left angle triangle
+
+function leftAngleTriangle(rows) {
+  for (let i = 1; i <= rows; i++) {
+    let str = "";
+    for (let j = 1; j <= i; j++) {
+      str += "* ";
+    }
+    console.log(str);
+  }
+}
+leftAngleTriangle(5);
+console.log("---left angle with gap-----");
+//left angle with space in between
+
+function leftAngleTriangleWithGap(rows) {
+  for (let i = 1; i <rows; i++) {
+    let str = "";
+    for (let j = 1; j <= i; j++) {
+      if (j === 1 || j === i) {
+        str += "* ";
+      }
+      else {
+        str += "  ";
+      }
+      
+    }
+    console.log(str);
+  }
+}
+leftAngleTriangleWithGap(5);
+   

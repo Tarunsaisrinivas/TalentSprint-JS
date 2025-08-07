@@ -336,6 +336,7 @@ console.log(fruits.includes('banana')); // true
 console.log(fruits.includes('mango'));  // false
 ```
 - Summary Table
+---
 | Method       | Returns             | Use Case                         |
 | ------------ | ------------------- | -------------------------------- |
 | `map()`      | New array           | Transform each item              |

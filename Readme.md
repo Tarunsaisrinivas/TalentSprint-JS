@@ -1,5 +1,5 @@
 # JavaScript
-[Interview Questions ](interview.md)
+Interview Questions 
 ## 📅 Topics Table
 
 | 📅 Date   |    🧠 Topic |🔗 Link                     | ✅ Status  |

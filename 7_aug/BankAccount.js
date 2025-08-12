@@ -35,7 +35,7 @@ class BankAccount {
 }
 export default BankAccount;
 // const acc = new BankAccount(12345, "Tarun", 1000);
-// acc.deposit(500);     
+// acc.deposit(500);    
 // acc.withdraw(200);    
 // acc.withdraw(2000);   
 // acc.withdraw(-50);   

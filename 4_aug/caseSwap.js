@@ -145,7 +145,7 @@ function countCharacter(str, char) {
   return str.split(char).length - 1;
 }
 
-console.log(countCharacter("Tarun sai srinivas", "a"));
+console.log(countCharacter("Tarun sai srinivas", "a")); 
 
 function reverseNumber(n) {
   return Number(n.toString().split("").reverse().join(""));

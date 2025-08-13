@@ -30,3 +30,13 @@ function descending(arr) {
   return arr;
 }
 
+
+//Circular Prime
+function isCircularPrime(n) {
+  const isPrime = x => x > 1 && [...Array(x).keys()].slice(2).every(i => x % i);
+  const rotations = s => [...s].map((_, i) => s.slice(i) + s.slice(0, i));
+  return rotations(n.toString()).every(r => isPrime(+r));
+}
+
+console.log(isCircularPrime(197)); // true
+console.log(isCircularPrime(23));  // false

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form</title>
+  </head>
+  <body>
+    <section>
+
+    <!-- <details> -->
+      <!-- <summary>Job Application Form</summary> -->
+    
+      <form>
+        <fieldset>
+          <legend>Job Application</legend>
+        <label for="name">Full Name:</label><br />
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="Enter your full name"
+          required
+        /><br /><br />
+
+        <label for="email">Email:</label><br />
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Enter your email"
+          required
+        /><br /><br />
+
+        <label for="phone">Phone Number:</label><br />
+        <select id="countryCode" name="countryCode" required>
+          <option value="select" disabled selected>Select Country</option>
+          <option value="+91">+91 (India)</option>
+          <option value="+1">+1 (USA)</option>
+          <option value="+44">+44 (UK)</option>
+          <option value="+61">+61 (Australia)</option>
+          <option value="+81">+81 (Japan)</option>
+          <option value="+49">+49 (Germany)</option>
+          <option value="+971">+971 (UAE)</option>
+        </select>
+        <input
+          type="tel"
+          id="phone"
+          name="phone"
+          placeholder="Enter your phone number"
+          required
+        /><br /><br />
+
+        <label>Gender:</label><br />
+        <input type="radio" id="male" name="gender" value="Male" />
+        <label for="male">Male</label>
+        <input type="radio" id="female" name="gender" value="Female" />
+        <label for="female">Female</label>
+        <input type="radio" id="other" name="gender" value="Other" />
+        <label for="other">Other</label>
+        <br /><br />
+
+        <label for="skills">Skills:</label><br />
+        <input
+          type="text"
+          id="skills"
+          name="skills"
+          placeholder="e.g. JavaScript, React, SQL"
+          required
+        /><br /><br />
+
+        <label for="why">Why should we hire you?</label><br />
+        <textarea
+          id="why"
+          name="why"
+          rows="4"
+          cols="40"
+          placeholder="Write your answer here..."
+          required
+        ></textarea
+        ><br /><br />
+
+        <label for="date">Able to Join On:</label><br />
+        <input type="date" id="date" name="date" required /><br /><br />
+
+        <label for="resume">Upload Resume:</label><br />
+        <input
+          type="file"
+          id="resume"
+          name="resume"
+          accept=".pdf,.doc,.docx"
+          required
+        /><br /><br />
+
+        <input type="checkbox" id="terms" name="terms" required />
+        <label for="terms"
+          >I confirm that the above details are correct and I accept the terms &
+          conditions.</label
+        ><br /><br />
+        <input type="submit" value="Submit Application" />
+        <input type="reset" value="Reset Form" />
+        </fieldset>
+      </form>
+      <!-- </details> -->
+    </section>
+  </body>
+</html>

@@ -349,3 +349,15 @@ console.log(fruits.includes('mango'));  // false
 | `includes()` | Boolean             | Check existence                  |
 
 ---
+## 📌 23. What is Prototype ? 
+```js
+function person1(name, age) {
+    this.name = name;
+    this.age = age;
+}
+person1.prototype.gender = 'male';
+
+const person2 = new person1('Tarun', 20);
+console.log(person2);
+console.log(person2.gender);
+```

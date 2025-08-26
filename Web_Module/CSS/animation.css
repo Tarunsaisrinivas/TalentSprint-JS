@@ -1,0 +1,116 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container {
+  border: 3px solid black;
+  width: 700px;
+  min-height: 250px;
+  margin: 30px;
+
+  position: relative;
+}
+.flag {
+  border-left: 2px solid black;
+  display: block;
+  flex-wrap: wrap;
+}
+
+.top {
+  background-color: orange;
+  width: 100%;
+  height: 100px;
+}
+.mid {
+  background-color: white;
+  width: 100%;
+  height: 100px;
+}
+.mid .reddot{
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    border-radius: 50%;
+    position: relative;
+    left: 45%;
+    visibility: hidden;
+    top: -30px;
+    
+}
+.mid .flag-img {
+  width: 200px;
+  animation: chakra 2s linear infinite;
+  margin: auto;
+  position: relative;
+  left: 25%;
+  top: -17px;
+}
+.bottom {
+  background-color: green;
+  width: 100%;
+  height: 100px;
+}
+
+@keyframes chakra {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+footer {
+  margin: 9px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.links {
+  display: flex;
+  gap: 20px;
+}
+.links ul li {
+  list-style-type: none;
+}
+.links a {
+  text-decoration: none;
+  color: black;
+  font-size: 20px;
+}
+
+@media screen and (max-width: 700px) {
+  body {
+    background-color: aqua;
+  }
+  .top {
+    background-color: green;
+    border: none;
+  }
+  .mid {
+    background-color: green;
+    border: none;
+  }
+  .mid .reddot{
+    visibility: visible;
+  }
+  .mid .flag-img {
+    visibility: hidden;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .top{
+    background-color: white;
+  }
+  .mid{
+    background-color: blue;
+  }
+  .mid .reddot{
+    visibility: hidden;
+  }
+  .bottom{
+    background-color: red;
+  }
+}

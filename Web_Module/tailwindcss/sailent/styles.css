@@ -1,0 +1,5 @@
+@import "tailwindcss";
+
+.card{
+    @apply p-5 bg-white text-gray-800 rounded-lg cursor-pointer shadow-lg ;
+}

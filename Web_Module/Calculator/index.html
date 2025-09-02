@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator with tailwind css</title>
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="container mx-auto mt-10">
+        <div class="flex flex-col items-center justify-center">
+            <h1 class="text-3xl font-bold mb-4">Calculator</h1>
+            <div class="flex flex-col items-center justify-center mb-4">
+                <input type="text" id="result" value="0" class="border border-gray-300 p-2 mb-2 text-right" readonly>
+
+                <div class="grid grid-cols-4 gap-2">
+                    <button class="bg-gray-200 hover:bg-gray-300 p-2" onclick="appendNumber('1')">1</button>
+                    <button class="bg-gray-200 hover:bg-gray-300 p-2" onclick="appendNumber('2')">2</button>
+                    <button class="bg-gray-200 hover:bg-gray-300 p-2" onclick="appendNumber('3')">3</button>
+                    <button class="bg-gray-200 hover:bg-gray-300 p-2" onclick="appendNumber('4')">4</button>
+                    <button class="bg-gray-200 hover:bg-gray-300 p-2" onclick="appendNumber('5')">5</button>
+                    <button class="bg-gray-200 hover:bg-gray-300 p-2" onclick="appendNumber('6')">6</button>
+                    <button class="bg-gray-200 hover:bg-gray-300 p-2" onclick="appendNumber('7')">7</button>
+                    <button class="bg-gray-200 hover:bg-gray-300 p-2" onclick="appendNumber('8')">8</button>                    
+                    <button class="bg-gray-200 hover:bg-gray-300 p-2" onclick="appendNumber('9')">9</button>
+                    <button class="bg-gray-200 hover:bg-gray-300 p-2" onclick="appendNumber('0')">0</button>
+                    <button class="bg-gray-200 hover:bg-gray-300 p-2" onclick="appendNumber('.')">.</button>
+                    <button class="bg-gray-200 hover:bg-gray-300 p-2" onclick="clearResult()">C</button>
+                    <button class="bg-gray-200 hover:bg-gray-300 p-2" onclick="backspace()"><i class="fa-solid fa-delete-left"></i></button>
+                    <button class="bg-gray-200 hover:bg-gray-300 p-2" onclick="calculateResult()">=</button>
+                    <button class="bg-gray-200 hover:bg-gray-300 p-2" onclick="appendOperator('+')">+</button>
+                    <button class="bg-gray-200 hover:bg-gray-300 p-2" onclick="appendOperator('-')">-</button>
+                    <button class="bg-gray-200 hover:bg-gray-300 p-2" onclick="appendOperator('*')">*</button>
+                    <button class="bg-gray-200 hover:bg-gray-300 p-2" onclick="appendOperator('/')">/</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        let result = '';
+        function appendNumber(number) {
+            result += number;
+            document.getElementById('result').value = result;
+        }
+        function clearResult() {
+            result = '';
+            document.getElementById('result').value = result;
+        }
+        function calculateResult() {
+            result = eval(result);
+            document.getElementById('result').value = result;
+        }
+        function appendOperator(operator) {
+            result += operator;
+            document.getElementById('result').value = result;
+        }
+        function backspace() {
+            result = result.slice(0, -1);
+            document.getElementById('result').value = result;
+        }
+
+      
+        function appendOperator(operator) {
+            const lastChar = result.slice(-1);
+            if (lastChar === '+' || lastChar === '-' || lastChar === '*' || lastChar === '/') {
+                result = result.slice(0, -1);
+            }
+            result += operator;
+            document.getElementById('result').value = result;
+        }
+    </script>
+
+</body>
+
+</body>
+</html>

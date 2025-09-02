@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM</title>
+  </head>
+  <body>
+    <h1>Welcome</h1>
+    <h1>to</h1>
+    <h1>se</h1>
+    <h2 class="h1">To Hyderabad</h2>
+    <p>Welcome to Hyderabad !</p>
+    <a href="https://www.google.com">Google</a>
+    <button id="btn">Click Me</button>
+    <script>
+      let name = prompt("Enter Your Name");
+      const btn = document.getElementById("btn");
+        btn.innerHTML = name;
+      // btn.append(" " + "Tarun");
+      // let num1 = parseInt(prompt("Enter First Number"));
+      // let num2 = parseInt(prompt("Enter Second Number"));
+      // let result = num1 + num2;
+      // document.write("Sum of " + num1 + " and " + num2 + " is " + result);
+    //   const h1 = document.querySelector("h1");
+      const allH1s = document.querySelectorAll("h1");
+      allH1s.forEach((h1) => (h1.innerHTML += " Tarun"));
+      // h1.style.color = "red";
+
+      const mydiv = document.createElement("div");
+      const mydiv_h1 = document.createElement("h1");
+      mydiv.append(mydiv_h1);
+        mydiv_h1.innerHTML = "This is created using JS";
+      document.body.appendChild(mydiv_h1);
+    </script>
+  </body>
+</html>

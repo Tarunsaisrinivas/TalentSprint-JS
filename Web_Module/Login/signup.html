@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+</head>
+<body>
+    <h1>Signup Page</h1>
+    <form action="">
+        <input type="email" placeholder="Enter Email" required>
+        <br><br>
+        <input type="password" placeholder="Password" required>
+        <br><br>
+        <input type="password" placeholder="Confirm Password" required>
+        <br><br>
+        <button type="submit">Signup</button>
+
+    </form>
+    <script>
+        const form = document.querySelector('form');
+        const email = form.querySelector('input[type="email"]');
+        const passwords = form.querySelectorAll('input[type="password"]');
+        const password = passwords[0];
+        const confirmPassword = passwords[1];
+
+        form.addEventListener('submit', (e) => {
+            if (password.value !== confirmPassword.value) {
+                alert('Passwords do not match');
+                e.preventDefault();
+            }
+            else if(password.value.length < 6) {
+                e.preventDefault();
+                alert('Password must be at least 6 characters long');
+            }
+            // need to store in local storage
+            else {
+                let users = JSON.parse(localStorage.getItem('users')) || [];
+                let user = {
+                    email: email.value,
+                    password: password.value
+                };
+                users.push(user);
+                localStorage.setItem('users', JSON.stringify(users));
+                alert('Signup successful');
+            }
+        });
+    </script>
+</body>
+</html>

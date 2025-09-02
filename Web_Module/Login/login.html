@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <h1>Login</h1>
+    <form action="">
+        <input type="email" placeholder="Enter Email" required>
+        <br><br>
+        <input type="password" placeholder="Password" required>
+        <br><br>
+        <button type="submit">Login</button>
+
+    </form>
+    <script>
+        const form = document.querySelector('form');
+        const email = form.querySelector('input[type="email"]');
+        const password = form.querySelector('input[type="password"]');
+
+        form.addEventListener('submit', (e) => {
+            let users = JSON.parse(localStorage.getItem('users')) || [];
+            let user = users.find(user => user.email === email.value && user.password === password.value);
+            if (!user) {
+                alert('Invalid email or password');
+                e.preventDefault();
+            }
+            else {
+                alert('Login successful');
+            }
+        });
+    </script>
+</body>
+</html>

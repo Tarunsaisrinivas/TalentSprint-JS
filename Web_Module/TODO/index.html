@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TODO List</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body class="bg-amber-200 text-center p-5">
+    <h1 class="text-3xl font-bold underline">TODO List</h1>
+
+    <div id="todoList" class="w-1/2 md:w-1/3 flex md:block mx-auto mt-5">
+      <input
+        type="text"
+        id="todoInput"
+        class="p-2 rounded-full border "
+        placeholder="Add a new todo"
+      />
+      <button id="addTodo" class="ml-2 p-4 rounded-xl bg-green-500 text-white">
+        Add
+      </button>
+    </div>
+    <div class="w-full md:w-1/3 mx-auto mt-5">
+      <ul id="todos" class="list-none p-0"></ul>
+    </div>
+
+    <script>
+      const todoInput = document.getElementById("todoInput");
+      const addTodoButton = document.getElementById("addTodo");
+      const todosList = document.getElementById("todos");
+
+      // Add new todo
+      function addTodo(text) {
+        const li = document.createElement("li");
+        li.className =
+          "flex justify-between  mb-2 bg-orange-400 p-3 rounded";
+        li.innerHTML = `
+          <span class=" cursor-pointer">${text}</span>
+          <button class="deleteBtn text-red-600 ml-2"><i class="fa fa-trash"></i></button>
+        `;
+        todosList.appendChild(li);
+        saveData();
+      }
+
+      addTodoButton.addEventListener("click", () => {
+        const todoText = todoInput.value.trim();
+        if (todoText.length < 5) {
+          alert("Todo must be at least 5 characters long.");
+          return;
+        }
+        addTodo(todoText);
+        todoInput.value = "";
+      });
+
+      // Enter key adds todo
+      todoInput.addEventListener("keypress", (e) => {
+        if (e.key === "Enter") addTodoButton.click();
+      });
+
+      // Event delegation for delete + toggle
+      todosList.addEventListener("click", (e) => {
+        if (e.target.closest(".deleteBtn")) {
+          e.target.closest("li").remove();
+          saveData();
+        } else if (e.target.tagName === "SPAN") {
+          e.target.classList.toggle("line-through");
+          saveData();
+        }
+      });
+
+      // Save todos
+      function saveData() {
+        localStorage.setItem("todos", todosList.innerHTML);
+      }
+
+      // Load todos
+      function loadData() {
+        const data = localStorage.getItem("todos");
+        if (data) todosList.innerHTML = data;
+      }
+
+      loadData();
+    </script>
+  </body>
+</html>

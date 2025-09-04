@@ -1,0 +1,56 @@
+<!-- Example HTML structure -->
+<form>
+  <input type="email" required />
+  <input type="password" required />
+  <input type="password" required />
+  <p id="lessError" style="display:none;"></p>
+  <span id="confirmError" style="display:none;"></span>
+  <button type="submit">Sign Up</button>
+</form>
+
+<script>
+  const form = document.querySelector("form");
+  const email = form.querySelector('input[type="email"]');
+  const passwords = form.querySelectorAll('input[type="password"]');
+  const password = passwords[0];
+  const confirmPassword = passwords[1];
+  const lessError = document.getElementById("lessError");
+  const confirmError = document.getElementById("confirmError");
+
+  form.addEventListener("submit", (e) => {
+    // Clear previous errors
+    confirmError.style.display = "none";
+    lessError.style.display = "none";
+
+    let hasError = false;
+
+    if (password.value.length < 6) {
+      lessError.textContent = "Password must be at least 6 characters long";
+      lessError.style.color = "red";
+      lessError.style.display = "block";
+      hasError = true;
+    }
+
+    if (password.value !== confirmPassword.value) {
+      confirmError.textContent = "Passwords do not match";
+      confirmError.style.color = "red";
+      confirmError.style.display = "block";
+      hasError = true;
+    }
+
+    if (hasError) {
+      e.preventDefault();
+      return;
+    }
+
+    // Save user data
+    let users = JSON.parse(localStorage.getItem("users")) || [];
+    let user = {
+      email: email.value,
+      password: password.value,
+    };
+    users.push(user);
+    localStorage.setItem("users", JSON.stringify(users));
+    alert("Signup successful");
+  });
+</script>

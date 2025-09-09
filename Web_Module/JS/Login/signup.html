@@ -74,6 +74,7 @@
       const confirmPassword = passwords[1];
 
       form.addEventListener("submit", (e) => {
+        e.preventDefault();
         lessError.style.display = "none";
         confirmError.style.display = "none";
 
@@ -82,17 +83,24 @@
           //   alert("Passwords do not match");
           confirmError.textContent = "Passwords do not match";
           confirmError.style.display = "block";
+          p.innerHTML = "Passwords do not match";
           confirmError.style.color = "red";
+          // confirmError.classList.add("text-red-500");
           error = true;
 
           e.preventDefault();
-        } else if (password.value.length < 6) {
+        }
+        // else if(password.value == [/[A-Z]/] || password.value == [/[a-z]/] || password.value == [/[0-9]/]){
+        //   e.pre
+        // }
+         else if (password.value.length < 6) {
           e.preventDefault();
           lessError.textContent = "Password must be at least 6 characters long";
           lessError.style.color = "red";
           lessError.style.display = "block";
           error = true;
         } else {
+      // JSON.parse and JSON.stringify diference
           let users = JSON.parse(localStorage.getItem("users")) || [];
           let user = {
             email: email.value,

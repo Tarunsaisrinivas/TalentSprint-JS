@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Counter</title>
+  </head>
+  <body>
+    <h1>Counter</h1>
+    <p id="count">0</p>
+    <button id="start">Start</button>
+    <button id="end">Stop</button>
+
+    <script>
+      let count = 0;
+      let intervalId; 
+      let limit = 0; 
+
+      const countElement = document.getElementById("count");
+      const startButton = document.getElementById("start");
+      const endButton = document.getElementById("end");
+
+      startButton.addEventListener("click", () => {
+        count = 0;
+        countElement.textContent = count;
+
+        limit = parseInt(prompt("Enter time in seconds"), 10);
+
+        if (isNaN(limit) || limit <= 0) {
+          alert("Please enter a valid positive number!");
+          return;
+        }
+
+        // Clear any previous intervals
+        clearInterval(intervalId);
+
+        // Start counting
+        intervalId = setInterval(() => {
+          count++;
+          countElement.textContent = count;
+
+          // Stop when limit is reached
+          if (count === limit) {
+            clearInterval(intervalId);
+          }
+        }, 1000);
+      });
+
+      endButton.addEventListener("click", () => {
+        clearInterval(intervalId);
+      });
+    </script>
+  </body>
+</html>

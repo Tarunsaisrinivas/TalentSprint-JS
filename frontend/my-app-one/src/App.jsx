@@ -1,35 +1,51 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useState } from "react";
+// import Dice from "./components/Dice";
+import CardGame from "./components/CardGame";
+import UserCard from "./components/UserCard";
+import ListData,{CityData} from './components/List';
+import Navbar from "./components/Navbar/Navbar";
+import Footer from "./components/Navbar/Footer";
+import ClassEx1 from "./components/ClassEx1";
+import StateEx3 from "./components/StateEx3";
+import StateList from "./components/StateList";
+import Form from "./components/Form";
+import ComponentA from "./context/ComponentA";
+const App = () => {
+  const [userName,setUserName] = useState("Tarun");
+  // const fruits = [
+  //   { name: "apple", color: "red" },
+  //   { name: "banana", color: "yellow" },
+  //   { name: "grape", color: "purple" }
+  // ];
 
-function App() {
-  const [count, setCount] = useState(0);
+  // const cities = ["Nellore", "Hyderabad", "Chennai"];
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <div className="bg-gray-900 text-white h-full">
+      <Navbar  />
+      <ComponentA userName={userName} setUserName={setUserName} />
+      {/* <Form />
+      <h1 className="font-bold">Fruits</h1>
+      {fruits.map((fruit, index) => (
+        <ListData key={index} name={fruit.name} color={fruit.color} />
+        
+      ))}
 
-export default App
+      <h1 className="font-bold">Cities</h1>
+
+      {cities.map((city, index) => (
+        <CityData key={index} city={city} />
+      ))}
+      
+      <StateEx3 />
+      <StateList />
+      <Dice />
+      <CardGame />
+      <UserCard  />
+      <ClassEx1 name="Class Ex1" />
+      <Footer /> */}
+    </div>
+  );
+};
+
+export default App;

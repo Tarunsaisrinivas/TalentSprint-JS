@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { createContext, useState } from "react";
 // import Dice from "./components/Dice";
 import CardGame from "./components/CardGame";
 import UserCard from "./components/UserCard";
@@ -10,6 +10,8 @@ import StateEx3 from "./components/StateEx3";
 import StateList from "./components/StateList";
 import Form from "./components/Form";
 import ComponentA from "./context/ComponentA";
+
+export const SampleContext = createContext();
 const App = () => {
   const [userName,setUserName] = useState("Tarun");
   // const fruits = [
@@ -22,6 +24,7 @@ const App = () => {
 
   return (
     <div className="bg-gray-900 text-white h-full">
+      <SampleContext.Provider value={{userName,setUserName}} >
       <Navbar  />
       <ComponentA userName={userName} setUserName={setUserName} />
       {/* <Form />
@@ -44,6 +47,7 @@ const App = () => {
       <UserCard  />
       <ClassEx1 name="Class Ex1" />
       <Footer /> */}
+      </SampleContext.Provider>
     </div>
   );
 };

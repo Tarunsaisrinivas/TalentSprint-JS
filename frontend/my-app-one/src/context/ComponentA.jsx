@@ -1,13 +1,12 @@
 import React from 'react'
 import ComponentB from './ComponentB'
 
-function ComponentA({ userName, setUserName }) {
-  console.log(userName);
+function ComponentA() {
 
   return (
     <div>
-      <h1>Compoenent A <span> {userName} </span></h1>
-      <ComponentB userName={userName} setUserName= {setUserName }/>
+      <h1>Compoenent A <span>  </span></h1>
+      <ComponentB />
     </div>
   )
 }

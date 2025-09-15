@@ -1,12 +1,12 @@
 import React from 'react'
 import ComponentD from './ComponentD'
 
-function ComponentC({ userName, setUserName }) {
+function ComponentC() {
   return (
     <div className="">
 
-      <h1>Componet C {userName || "Name"}</h1>
-      <ComponentD userName={userName} setUserName={setUserName} />
+      <h1>Componet C</h1>
+      <ComponentD  />
     </div>
   )
 }

@@ -1,8 +1,9 @@
 import React, { useContext,useState }  from 'react';
-import { SampleContext } from '../App';
+import UserContext from './UserContext';
+
 
 function ComponentE() {
-  const {userName,setUserName} = useContext(SampleContext);
+  const {userName,setUserName} = useContext(UserContext);
   const [input, setInput] = useState('');
   const handleClick = (e) => {
     e.preventDefault();
@@ -16,7 +17,7 @@ function ComponentE() {
     <div>
       <h1>Component E {userName}</h1>
       <form action="">
-        <input type="text" onChange={(e) => setInput(e.target.value)} />
+        <input type="text" placeholder='Enter Name'  onChange={(e) => setInput(e.target.value)} />
         <input type="submit" onClick={handleClick}  />
       </form>
     </div>

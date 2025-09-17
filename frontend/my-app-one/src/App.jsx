@@ -13,10 +13,12 @@ import ComponentA from "./context/ComponentA";
 import UserContext from "./context/UserContext";
 import LifeCycleClass from "./components/LifeCycle";
 import LifeCycleFun from "./components/LifeCycleFun";
-
+import LifeCycleEx1 from "./components/LifeCycleEx1";
+import useCounter from "./Hooks/useCounter";
 const App = () => {
   const [userName,setUserName] = useState("Tarun");
   const [show, setShow] = useState(true);
+  const [count,increment,decrement,reset] = useCounter();
   // const fruits = [
   //   { name: "apple", color: "red" },
   //   { name: "banana", color: "yellow" },
@@ -33,6 +35,12 @@ const App = () => {
 <LifeCycleFun />
      {show && <LifeCycleClass />}
         <button onClick={() => setShow(!show)}> {show ? "Hide" : "Show"} </button>
+        <LifeCycleEx1 />
+        <p>Count {count}</p>
+        <button onClick={increment}>Increment</button>
+        <button onClick={decrement}>Decrement</button>
+        <button onClick={reset}>Reset</button>
+
       {/* <Form />
       <h1 className="font-bold">Fruits</h1>
       {fruits.map((fruit, index) => (

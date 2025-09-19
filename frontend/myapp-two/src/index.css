@@ -1,0 +1,12 @@
+@import 'tailwindcss';
+
+.active{
+	border-bottom: 5px solid orange;
+}
+
+.btn-bg{
+	@apply bg-gradient-to-r from-green-200 via-green-300 to-blue-500 px-6 py-2 text-xl font-semibold rounded-2xl
+}
+.nav-item{
+	@apply mx-4 text-2xl hover:bg-teal-400
+}

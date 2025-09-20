@@ -21,7 +21,7 @@ function NavBar() {
 						e.preventDefault();
 						setShow(!show);
 					}}
-
+				>
 					<FaMobileRetro className='inline pb-2' /> Contact
 				</NavLink>
 

@@ -28,7 +28,8 @@ exports.generateSecret = (req, res) => {
 };
 
 exports.guessWord = (req, res) => {
-  const { word } = req.query;
+  // const { word } = req.query;
+  const { word } = req.body;
 
   if (!gameState.secret) {
   return res.status(400).send(

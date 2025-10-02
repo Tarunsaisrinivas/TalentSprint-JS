@@ -6,9 +6,8 @@ const PORT = process.env.PORT || 3000;
 const userRoute = require("./routes/userRoute");
 const gameRoute = require("./routes/gameRoute");
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
-
+app.use(express.json());
+app.use(express.static("public"));
 app.use("/game", gameRoute);
 app.use("/", userRoute);
 

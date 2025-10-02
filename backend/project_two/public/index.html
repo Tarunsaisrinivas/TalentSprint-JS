@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Word Guessing Game</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      text-align: center;
+      padding: 50px;
+    }
+    .container {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      max-width: 500px;
+      margin: auto;
+    }
+    input {
+      padding: 10px;
+      font-size: 16px;
+      width: 60%;
+      margin-right: 10px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+    }
+    #feedback {
+      margin-top: 20px;
+      font-size: 18px;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    li {
+      margin: 5px 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🔤 Word Guessing Game</h1>
+    <button id="startGame">Start New Game</button>
+
+    <form id="guessForm">
+      <input type="text" id="guessInput" maxlength="5" placeholder="Enter 5-letter word" required />
+      <button type="submit">Guess</button>
+    </form>
+
+    <div id="feedback"></div>
+  </div>
+
+  <script>
+    document.getElementById("startGame").addEventListener("click", () => {
+      fetch("/game/secret")
+        // .then(res => res.text())
+        .then(html => {
+          document.getElementById("feedback").innerHTML = html;
+        })
+        .catch(() => {
+          document.getElementById("feedback").innerHTML = `<span style="color:red;">Error starting game</span>`;
+        });
+    });
+
+    document.getElementById("guessForm").addEventListener("submit", (e) => {
+      e.preventDefault();
+      const word = document.getElementById("guessInput").value;
+
+      fetch("/game/guess", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ word })
+      })
+        .then(res => {
+          const contentType = res.headers.get("content-type");
+          if (contentType.includes("application/json")) {
+            return res.json();
+          } else {
+            return res.text();
+          }
+        })
+        .then(data => {
+          if (typeof data === "string") {
+            document.getElementById("feedback").innerHTML = data;
+          } else {
+            const feedbackList = data.feedback.map(f => `<li>${f.message}</li>`).join("");
+            document.getElementById("feedback").innerHTML = `
+              ${data.message}
+              <ul>${feedbackList}</ul>
+              <p>Attempts left: ${data.attemptsLeft}</p>
+            `;
+          }
+        })
+        .catch(() => {
+          document.getElementById("feedback").innerHTML = `<span style="color:red;">Error submitting guess</span>`;
+        });
+    });
+  </script>
+</body>
+</html>

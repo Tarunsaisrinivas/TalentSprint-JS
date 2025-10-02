@@ -32,14 +32,18 @@ exports.guessWord = (req, res) => {
   const { word } = req.body;
 
   if (!gameState.secret) {
-  return res.status(400).send(
-  `<span style="color:red;">Game not started. Please generate a secret word first.</span>`
-);
-}
+    return res
+      .status(400)
+      .send(
+        `<span style="color:red;">Game not started. Please generate a secret word first.</span>`
+      );
+  }
   if (!word) {
-    return res.status(400).send(
-  `<span style="color:orange;">Please provide a word to guess</span>`
-);
+    return res
+      .status(400)
+      .send(
+        `<span style="color:orange;">Please provide a word to guess</span>`
+      );
   }
 
   if (word.length !== 5) {
@@ -91,16 +95,16 @@ exports.guessWord = (req, res) => {
   if (gameState.attempts <= 0) {
     const oldSecret = gameState.secret;
     gameState.secret = null;
-   return res
-     .status(200)
-     .send(
-       `<span style="color:red;">No attempts left. Game over! The word was <strong>${oldSecret}</strong>.</span>`
-     );
+    return res
+      .status(200)
+      .send(
+        `<span style="color:red;">No attempts left. Game over! The word was <strong>${oldSecret}</strong>.</span>`
+      );
   }
 
- return res.status(200).json({
-   message: `<span style="color:blue;">${word} is a wrong guess. Try again!</span>`,
-   attemptsLeft: gameState.attempts,
-   feedback,
- });
+  return res.status(200).json({
+    message: `<span style="color:blue;">${word} is a wrong guess. Try again!</span>`,
+    attemptsLeft: gameState.attempts,
+    feedback,
+  });
 };

@@ -39,4 +39,4 @@ store.dispatch(deposit({ id: 1, amount: 100 }));
 store.dispatch(withdraw({ id: 2, amount: 50 }));
 
 console.log("Rahul's Balance:", selectBalance(store.getState(), 1));
-console.log("Raj's Balance:", selectBalance(store.getState(), 2));
+console.log("Raj's Balance:", selectBalance(store.getState(), 2));            

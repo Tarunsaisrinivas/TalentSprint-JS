@@ -16,7 +16,7 @@ app.use("/", userRoute);
 app.use(ErrorHandling);
 
 app.listen(PORT, () => {
-    // console.log(process.env)
-    connectDB();
+  // console.log(process.env)
+  connectDB();
   console.log(`Project Three is running on port http://localhost:${PORT}`);
 });

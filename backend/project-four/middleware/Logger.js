@@ -3,6 +3,6 @@ exports.Logger = (req, res, next) => {
   next();
 };
 exports.ErrorHandler = (err, req, res, next) => {
-  console.error(err.stack);
-  res.status(500).send('Something broke!');
+  console.error(err.message);
+  res.status(500).send({ "something went wrong from error handling middleware" : err.message , status: 500 ,type:err.type});
 }

@@ -23,7 +23,7 @@ exports.addUser = async (req, res) => {
     const newUser = await new userSchema({
       name,
       email,
-      password: has,
+      password: hashpwd,
     });
     const { _id } = await newUser.save();
     res.json({ message: "User added successfully",email,password,_id });

@@ -1,5 +1,6 @@
 const userSchema = require("../models/userSchema");
 const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
 exports.getUser = async (req, res) => {
   console.log(`Req url: ${req.url} Method: ${req.method}`);
   const users = await userSchema.find({}, "-password");
@@ -26,9 +27,8 @@ exports.addUser = async (req, res) => {
       password: hashpwd,
     });
     const { _id } = await newUser.save();
-    res.json({ message: "User added successfully",email,password,_id });
+    res.json({ message: "User added successfully", email, password, _id });
   }
-
 };
 
 exports.deleteOneUser = async (req, res) => {
@@ -38,27 +38,40 @@ exports.deleteOneUser = async (req, res) => {
   res.json({ message: "User deleted successfully" });
 };
 
-
-exports.deleteUsers = async(req,res)=>{
+exports.deleteUsers = async (req, res) => {
   const users = await userSchema.deleteMany();
-  if(!users) return res.status(404).json({error: "Users not found"});
-  res.json({message: "Users deleted successfully"});
-}
+  if (!users) return res.status(404).json({ error: "Users not found" });
+  res.json({ message: "Users deleted successfully" });
+};
 
-exports.login = (req, res) => {
+
+exports.login = async (req, res) => {
   const { email, password } = req.body;
-  const user = userSchema.findOne({ email });
-  if (!user) return res.status(404).json({ error: "User not found" });
-  let isMatch = bcrypt.compareSync(password, user.password);
-  if (!isMatch) return res.status(401).json({ error: "Invalid credentials" });
-  res.json({ message: "User logged in successfully" });
-}
 
-exports.updateUser = (req,res) =>{
-  const { email,name,password } = req.body;
+  try {
+    const user = await userSchema.findOne({ email });
+    if (!user) return res.status(404).json({ error: "User not found" });
+
+    const isMatch = bcrypt.compareSync(password, user.password);
+    if (!isMatch) {
+      return res.status(401).json({ error: "Invalid password credentials" });
+    }
+
+    const token = jwt.sign({ email }, process.env.JWT_SECRET, {
+      expiresIn: "600",
+    });
+    return res.json({ message: "User logged in successfully", token });
+  } catch (err) {
+    console.error("Login error:", err);
+    return res.status(500).json({ error: "Internal server error" });
+  }
+};
+
+exports.updateUser = (req, res) => {
+  const { email, name, password } = req.body;
   const user = userSchema.findOneAndUpdate({ email });
-  if(password) user.password = bcrypt.hashSync(password, 12);
-  
+  if (password) user.password = bcrypt.hashSync(password, 12);
+
   if (!user) return res.status(404).json({ error: "User not found" });
-  res.json({ message: "User updated successfully" })
-}
+  res.json({ message: "User updated successfully" });
+};

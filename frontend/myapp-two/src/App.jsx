@@ -9,6 +9,7 @@ import NavBar from "./components/NavBar";
 import { useState } from "react";
 import RecipeDetails from "./pages/RecipeDetails";
 import AddRecipe from "./pages/AddRecipe";
+import Login from "./pages/Login";
 
 const reciepesList = [
     {
@@ -121,6 +122,7 @@ function App() {
           <Route path="/add" element = {<AddRecipe />} />
           <Route path="/recipes/:index" element = {<RecipeDetails />} />
           <Route path="/contact" element = {<Contact />} />
+          <Route path="/login" element = {<Login />} />
         </Routes>
         <Footer />
         </themeContext.Provider>

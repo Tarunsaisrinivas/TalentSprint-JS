@@ -9,6 +9,7 @@ const navigate = useNavigate();
   const handleClick = (index)=>{
 		navigate(`/recipes/${index}`)
 }
+
   return (
     <>
     <Link to="/add" >Add Recipe</Link>

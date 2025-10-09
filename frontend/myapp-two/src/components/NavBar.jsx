@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaHouse, FaBook, FaMobileRetro } from "react-icons/fa6";
+import { FaHouse, FaBook, FaMobileRetro, FaUser } from "react-icons/fa6";
 import { Link, NavLink, useLocation } from 'react-router-dom'; // ✅ Fixed import
 
 function NavBar() {
@@ -28,6 +28,7 @@ function NavBar() {
 				{show && <Link className='flex flex-col' to="/contact">Contact us at 123-456-7890</Link>}
 				<NavLink className='nav-item' to="/add"><FaMobileRetro className='inline pb-2' /> Add Recipe</NavLink>
 				<NavLink className='nav-item' to="/recipes"><FaMobileRetro className='inline pb-2' /> Recipes</NavLink>
+				<NavLink className='nav-item' to="/login"><FaUser className='inline pb-2' /> Login</NavLink>
 			</nav>
 		</header>
 	);

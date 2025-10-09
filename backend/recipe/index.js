@@ -1,6 +1,6 @@
 const express = require("express");
 const dotenv = require("dotenv");
-
+const cors = require("cors");
 const recipeRoutes = require("./routes/recipeRoutes");
 const connectDB = require("./db");
 const { ErrorHandle, Logger } = require("./middleware/Logger");
@@ -11,6 +11,7 @@ dotenv.config();
 const app = express();
 
 app.use(express.json());
+app.use(cors());
 // const swaggerOptions = {
 //   definition: {
 //     openapi: "3.0.0",

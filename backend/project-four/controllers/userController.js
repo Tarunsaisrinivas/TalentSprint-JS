@@ -44,7 +44,6 @@ exports.deleteUsers = async (req, res) => {
   res.json({ message: "Users deleted successfully" });
 };
 
-
 exports.login = async (req, res) => {
   const { email, password } = req.body;
 
@@ -58,7 +57,7 @@ exports.login = async (req, res) => {
     }
 
     const token = jwt.sign({ email }, process.env.JWT_SECRET, {
-      expiresIn: "600",
+      expiresIn: 600,
     });
     return res.json({ message: "User logged in successfully", token });
   } catch (err) {

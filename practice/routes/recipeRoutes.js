@@ -6,8 +6,11 @@ const keerthi = express.Router();
 keerthi.get("/",getRecipes); // To get items
 keerthi.get("/:id",getRecipesById); // To get items of particular id base
 keerthi.post("/",createRecipe);
-keerthi.put("/",updateRecipe);
-keerthi.delete("/",deleteRecipes);
+keerthi.put("/:id",updateRecipe);
+keerthi.delete("/:id",deleteRecipes);
+
+
+
 
 module.exports = keerthi
 

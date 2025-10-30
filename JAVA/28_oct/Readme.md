@@ -108,7 +108,7 @@ class Animal{
 ```
 - Encapsulation : Wrapping up of data and method() with its corresponding object known as encapsulation. 
 
-
+- Data Abstraction : Providing necessary features and hiding unwanted features to the outside world
 - Access Specifier : 
  1. Private:
  2. Public:
@@ -122,6 +122,12 @@ class Animal{
 | Protect | OK | OK | Instance | OK | NO |
 | Public | OK | OK | Instance  | OK | Instance |
 
+
+- Inheritance: Acquiring or getting all or some properties into new class from the existing old class know inheritance.
+
+- Advantage :
+1. Code re-usability
+2. Extend the programming features into new features. 
 
 
 ### Interview questions

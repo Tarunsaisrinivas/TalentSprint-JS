@@ -28,8 +28,18 @@ public class ProductArray {
             }
             System.out.println("Product of row " + (i + 1) + ": " + product);
         }
-//        System.out.println("Table format");
-        
+       System.out.println("Table format");
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < arr[i].length; j++) {
+                System.out.print(arr[i][j] + "");
+            }
+            int product = 1;
+            for (int j = 0; j < arr[i].length; j++) {
+                product *= arr[i][j];
+            }
+            System.out.print("-"+product);
+            System.out.println();
+        }        
         
         sc.close();
 	}

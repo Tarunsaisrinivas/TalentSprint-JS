@@ -1,0 +1,10 @@
+public class DemoPackage
+{
+	public static void main(String [] args)
+	{
+		Abc obj = new Abc();
+		obj.read(100);
+		obj.show();	
+	}
+
+}

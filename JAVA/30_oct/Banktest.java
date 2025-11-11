@@ -46,7 +46,7 @@ class BankAccount {
 }
 public class Banktest {
     public static void main(String[] args) {
-        BankAccount account = new BankAccount("123456789", "John Doe", 1000.0);
+        BankAccMain account = new BankAccMain("123456789", "John Doe", 1000.0);
         
         System.out.println("Account Holder: " + account.getCustomerName());
         System.out.println("Account Number: " + account.getAccountNumber());

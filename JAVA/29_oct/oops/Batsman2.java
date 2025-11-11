@@ -6,8 +6,46 @@ class Batsman {
     private int ballsFaced;
     private int fours;
     private int sixes;
-
-    public Batsman(String name, int runsScored, int centuries, int halfCenturies, int ballsFaced, int fours, int sixes) {
+    public Batsman() {
+    		
+    }
+    public int getRunsScored() {
+		return runsScored;
+	}
+	public void setRunsScored(int runsScored) {
+		this.runsScored = runsScored;
+	}
+	public int getCenturies() {
+		return centuries;
+	}
+	public void setCenturies(int centuries) {
+		this.centuries = centuries;
+	}
+	public int getHalfCenturies() {
+		return halfCenturies;
+	}
+	public void setHalfCenturies(int halfCenturies) {
+		this.halfCenturies = halfCenturies;
+	}
+	public int getBallsFaced() {
+		return ballsFaced;
+	}
+	public void setBallsFaced(int ballsFaced) {
+		this.ballsFaced = ballsFaced;
+	}
+	public int getFours() {
+		return fours;
+	}
+	public void setFours(int fours) {
+		this.fours = fours;
+	}
+	public int getSixes() {
+		return sixes;
+	}
+	public void setSixes(int sixes) {
+		this.sixes = sixes;
+	}
+	public Batsman(String name, int runsScored, int centuries, int halfCenturies, int ballsFaced, int fours, int sixes) {
         this.name = name;
         this.runsScored = runsScored;
         this.centuries = centuries;
@@ -18,8 +56,8 @@ class Batsman {
         
     }
     
-    int getStrikeRate() {
-        return (int)(((float)this.runsScored / this.ballsFaced) * 100);
+    float getStrikeRate() {
+        return (this.runsScored / this.ballsFaced) * 100;
     }
 
     int getRunsScoredInBoundaries() {
@@ -35,12 +73,10 @@ class Batsman {
 
 public class Batsman2 {
     public static void main(String[] args) {
-        Batsman b1 = new Batsman("Virat Kohli", 12000, 43, 62, 13000, 1000, 250);
-        System.out.println("Strike Rate of " + b1.getName() + " is : " + b1.getStrikeRate());
-        System.out.println("Runs scored in boundaries by " + b1.getName() + " is : " + b1.getRunsScoredInBoundaries());
-
-        Batsman b2 = new Batsman("Rohit Sharma", 9000, 29, 43, 11000, 800, 200);
-        System.out.println("Strike Rate of " + b2.getName() + " is : " + b2.getStrikeRate());
-        System.out.println("Runs scored in boundaries by " + b2.getName() + " is : " + b2.getRunsScoredInBoundaries());
+       Batsman b1 = new Batsman();
+       b1.setName("virat");
+       b1.setCenturies(200);
+       System.out.println("Name :" + b1.getName());
+       
     }
 }

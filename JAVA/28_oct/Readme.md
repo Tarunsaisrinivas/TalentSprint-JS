@@ -128,8 +128,6 @@ class Animal{
 - Advantage :
 1. Code re-usability
 2. Extend the programming features into new features. 
+3. Difference between final, finally, finalized
 
 
-### Interview questions
-1. what is Jagged Array ?
-2. Will call by reference method support in java

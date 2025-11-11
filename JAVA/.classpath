@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="27_oct"/>
+	<classpathentry kind="src" path="11_nov"/>
+	<classpathentry kind="src" path="10_nov"/>
+	<classpathentry kind="src" path="7_nov"/>
+	<classpathentry kind="src" path="6_nov"/>
+	<classpathentry kind="src" path="5_nov"/>
+	<classpathentry kind="src" path="4_nov"/>
+	<classpathentry kind="src" path="3_Nov"/>
+	<classpathentry kind="src" path="31_oct"/>
 	<classpathentry kind="src" path="30_oct"/>
 	<classpathentry excluding="oops/" kind="src" path="29_oct"/>
 	<classpathentry kind="src" path="28_oct"/>

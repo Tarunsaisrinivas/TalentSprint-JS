@@ -5,3 +5,5 @@
 4. Write a bank code with abstraction and encapsulation ?
 5. Multi thread and multi processing difference ? 
 6. What is join functionality 
+
+7. difference b/w sub query and corelational  query -> sql

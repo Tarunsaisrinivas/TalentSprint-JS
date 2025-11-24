@@ -1,11 +1,5 @@
-/DemoArrayList3.class
-/MyObject.class
-/DemoEmployee.class
-/Emp1.class
-/DemoStack.class
-/DemoSortNames.class
-/CustomerSortingComparator.class
-/Stud1.class
-/DemoSortEmployeeSalary.class
-/SalaryComparator.class
-/Employee1.class
+/.classpath
+/.project
+/.settings/
+/bin/
+/src/

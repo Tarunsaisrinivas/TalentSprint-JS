@@ -7,7 +7,6 @@ public class CloneArray {
         int[] arr = {1, 2, 3, 4, 5};
         int[] clone = arr.clone();
         System.out.println(Arrays.toString(arr));
-        
         System.out.println(Arrays.equals(arr, clone));
     }
 }

@@ -1,0 +1,50 @@
+<h2 class="text-2xl font-bold">Two-Way Binding</h2>
+
+<p class="mt-2">
+  Live value: <strong>{{ userval }}</strong>
+</p>
+
+<form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)" class="mt-4">
+  <input
+    type="text"
+    name="username"
+    [(ngModel)]="userval"
+    #username="ngModel"
+    required
+    minlength="3"
+    class="border p-2 rounded w-full"
+    placeholder="Enter name"
+  />
+
+  @if (username.touched && username.invalid) {
+  <div class="text-red-500 mt-2">
+    @if (username.errors?.['required']) {
+    <div>❌ Name is required</div>
+    } @if (username.errors?.['minlength']) {
+    <div>❌ Minimum 3 characters required</div>
+    }
+  </div>
+  }
+
+  <button
+    type="submit"
+    class="mt-4 bg-blue-600 text-white px-4 py-2 rounded"
+    [disabled]="userForm.invalid"
+  >
+    Submit
+  </button>
+</form>
+
+@if (submittedValue) {
+<div class="mt-4 text-green-600">
+  ✅ Submitted value: <strong>{{ submittedValue }}</strong>
+</div>
+}
+
+<hr class="my-6" />
+
+<input #myinput type="text" class="border p-2 rounded" />
+
+<button (click)="showvalue(myinput.value)" class="ml-2 bg-green-600 text-white px-4 py-2 rounded">
+  Update Value
+</button>

@@ -37,7 +37,7 @@ GRANT SELECT ON orderdetails TO 'reportuser';
 REVOKE SELECT ON orderdetails FROM 'reportuser';
 
 -- 9. Deduct 5 from price for all items in order 10101
-UPDATE orderdetails
+UPDATE orderdetails	
 SET priceEach = priceEach - 5
 WHERE orderNumber = 10101;
 
@@ -47,4 +47,7 @@ START TRANSACTION;
 UPDATE orderdetails
 SET priceEach = priceEach + 100
 WHERE orderNumber = 10101;
+
+
+
 
